@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+            min-height:100%;
+            background:url("https://wallpapercave.com/wp/wp9084973.jpg");
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            -webkit-user-select: none; 
+            -moz-user-select: none;    
+            -ms-user-select: none;    
+            user-select: none;
+            -webkit-user-drag: none; 
+            /*filter:url(#pixelate);*/
+            }
+            .text {
+                font-family:'Tahoma';
+                color:white;
+                
+            }
+            
+            .icon {
+                width:40%;
+                padding:0;
+                margin:0;
+                
+            }
+            #cd-player {
+                position:absolute;
+            }
+            .desktop-icons {
+                display:flex;
+                justify-content:center;
+                text-align:center;
+                width:10%;
+                display:block;
+                position:absolute;
+            }
+            #notepadwindow, #cosmiccrushwindow, #neighbourwindow, #worldwindow, #shadowbladewindow {
+                position:absolute;
+                border-radius:5px;
+                min-width:300px;
+                display:none;
+                top:30%;
+                left:30%;
+            }
+            #notepadwindowheader {
+                background-color: #0059e2;
+                cursor:move;
+            }
+            #notepad-photo {
+                border-radius:5px;
+            }
+            #notepad-text, #cosmic-crush-text, #neighbour-text, #shadow-blade-text, #world-text {
+                font-family:'Lucida Console';
+                position:absolute;
+                text-align:left;
+                top:12%;
+                left:2%;
+                font-size:60%;
+                width:95%;
+                color:#3a3b38;
+                text-shadow: 
+                    0.1px 1px 0 #929592, 
+                    0.1px 0 0 #929592, 
+                    0 0.1px 0 #929592, 
+                    -0.1px -0.1px 0 #929592;
+            }
+            #close-notepad, #close-cosmic-crush, #close-neighbour, #close-shadow-blade, #close-world {
+                left:96%;
+                position:absolute;
+                cursor:pointer;
+                padding:0;
+                margin:0;
+                color:transparent;
+                
+            }
+            #close-folder {
+                padding:0;
+                margin:0;
+                width:1%;
+                font-size:60%;
+                position:absolute;
+                left:38.5%;
+                top:1%;
+                cursor:pointer;
+                color:transparent;
+            }
+            #back-folder {
+                padding:0;
+                margin:0;
+                width:1.5%;
+                font-size:60%;
+                position:absolute;
+                left:2%;
+                top:7%;
+                cursor:pointer;
+                color:transparent;
+            }
+            #paint-desktop {
+                position:absolute;
+                top:20%;
+            }
+            #cd-desktop {
+                position:absolute;
+                top:35%;
+            }
+            #cd-icon {
+                width:80%;
+            }
+            
+            
+        
+        /*(c) Layout created by daniel (https://layouts.spacehey.com/layout?id=82538) -->
+
+<!--------- CD Player Code Start --------->
+<!--------- MUSIC PLAYER ITSELF, CHANGE EMBED URL TO VIDEO URL OF YOUR SONG --------->*/
+
+
+/* customization. change your artist, title and album cover respectively */
+            :root {
+            --artist:"Madilyn Mei";
+            --title:"The Queen";
+            --albumcover: url(https://tse3.mm.bing.net/th/id/OIP.mfXPLjViYB1-9Og5V3YmMAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3);
+            }
+            
+        /* the code itself */
+            #cd-player-window {
+                display:none;
+                position:absolute;
+                left:70%;
+            }
+            .status-bar,.title-bar,.title-bar-controls{
+                display:flex
+            }
+            .window,p#butt{
+                background:silver;margin:auto
+            }
+            p#text,p#text2{
+                box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+                box-sizing:border-box;
+                margin-block:3px
+            }
+            p#butt,p#text,p#text2{
+                box-sizing:border-box
+            }
+            p#label,p#text,p#text2{
+                margin-block:3px
+            }
+            .status-bar,.title-bar-text,.toptoptop,p#butt,p#label,p#text2{
+                user-select:none
+            }
+            @font-face{
+                font-family:"Pixelated MS Sans Serif";
+                font-style:normal;
+                font-weight:400;
+                src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff) format("woff");
+                src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff2) format("woff2")
+                }
+            @font-face{
+                font-family:"Pixelated MS Sans Serif";
+                font-style:normal;
+                font-weight:700;
+                src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff) format("woff");
+                src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff2) format("woff2")
+                }
+            .window{
+                text-shadow:none;
+                box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;
+                padding:3px;
+                position:absolute;
+                }
+            .window img{
+                filter:none!important
+            }
+            .window *{
+                -webkit-font-smoothing:none;
+                font-family:"Pixelated MS Sans Serif",Arial;
+                font-size:11px;
+                text-shadow:inherit;
+                }
+            .title-bar{
+                align-items:center;
+                background:linear-gradient(90deg,navy,#1084d0);
+                justify-content:space-between
+            }
+            .title-bar-text{
+                color:#fff;
+                font-weight:700;
+                letter-spacing:0;
+                margin-right:24px;
+                line-height:15px
+            }
+            .title-bar-controls p#butt{
+                display:block;
+                min-height:14px;
+                min-width:16px;
+                padding:0
+            }
+            .title-bar-controls p#butt:active{
+                padding:0
+            }
+            .title-bar-controls p#butt:focus{
+                outline:0
+            }
+            .title-bar-controls p#butt.minimize{
+                background-image:url("data:image/svg+xml);charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+                background-position:bottom 3px left 4px;
+                background-repeat:no-repeat
+            }
+            .title-bar-controls p#butt.maximize{
+                background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+                background-position:top 2px left 3px;
+                background-repeat:no-repeat
+            }
+            .title-bar-controls p#butt.close{
+                background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+                background-position:top 3px left 4px;
+                background-repeat:no-repeat;
+                margin-left:2px
+            }
+            .status-bar{
+                gap:1px;
+                margin:0 1px
+            }
+            p#butt{
+                white-space:nowrap;
+            }
+            .buttontos,p#butt,p#label,p#text,p#text2{
+                display:inline-block
+            }
+            .status-bar-field{
+                box-shadow:inset -1px -1px #dfdfdf,inset 1px 1px grey;
+                flex-grow:1;
+                margin:0;
+                padding:2px 3px
+            }
+            .window-body{
+                margin:8px
+            }
+            p#butt{
+                border:none;
+                border-radius:0;
+                min-height:23px;
+                min-width:75px;
+                padding:6px 12px 0;
+                text-shadow:0 0 #222;
+                box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;color:#000
+            }
+            #cd-player-window {
+                position:absolute;
+            }
+            p#butt:active{
+                box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;
+                text-shadow:1px 1px #222
+            }
+            p#butt:focus{
+                outline:#000 dotted 1px;
+                outline-offset:-4px
+            }
+            p#butt::-moz-focus-inner{
+                border:0
+            }
+            .toptoptop{
+                text-align:left;
+                margin-top:-3px!important;
+                margin-bottom:5px!important;
+                margin-inline:0px!important;
+            }
+            .toptoptop span{
+                border:1px solid silver;
+                padding:2px 4px
+            }
+            .toptoptop span:hover{
+                border-top:1px solid #fff;
+                border-left:1px solid #fff;
+                border-bottom:1px solid gray;
+                border-right:1px solid gray
+            }
+            .toptoptop span:focus{
+                border:1px inset #fff
+            }
+            .window{
+                color:#000!important;
+                font-family:"Pixelated MS Sans Serif"!important
+            }
+            p#text:active{
+                background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h16v17H0V0zm1 16h14V1H1v15z' fill='gray'/%3E%3Cpath fill='silver' d='M1 1h14v15H1z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 7H5v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7z' fill='%23000'/%3E%3C/svg%3E")
+                }
+            p#text{
+                background-color:#fff;
+                padding:4px;
+                width:85%;
+                text-align:left;
+                font-size:12px;
+                background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 0H0v16h1V1h14V0z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 1H1v14h1V2h12V1H2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 17H0v-1h15V0h1v17z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 1h-1v14H1v1h14V1z' fill='gray'/%3E%3Cpath fill='silver' d='M2 2h12v13H2z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 6H4v1h1v1h1v1h1v1h1V9h1V8h1V7h1V6z' fill='%23000'/%3E%3C/svg%3E");
+                background-position:top 2px right 2px;
+                background-repeat:no-repeat
+            }
+            p#text.artist:after{
+                content:var(--artist)
+            }
+            p#text.title:after{
+                content:var(--title)
+            }
+            p#text2:before{
+                content:"";
+                display:block;
+                position:absolute;
+                top:1px;left:1px;
+                background:var(--albumcover);
+                width:98%;height:96%;
+                opacity:.5;
+                background-size:cover;
+                background-position:center;
+                z-index:-1
+            }
+            p#text2{
+                position:relative;
+                padding:13px 4px;
+                width:54%;
+                font-size:20px;
+                text-align:center;
+                color:olive;
+                background:#000;
+                z-index:999
+            }
+            #butt,p#label{
+                font-size:12px
+            }
+            p#label{
+                width:fit-content;
+                margin-right:5px
+            }
+            .ahhh{
+                text-align:right;
+            }
+            .title-bar{
+                padding:2px
+            }
+            .title-bar-text img{
+                vertical-align:bottom;
+                margin-inline:2px
+            }
+            .buttontos{
+                width:45%;
+                height:54px;
+                vertical-align:top;
+                text-align:center
+            }
+            #butt{
+                color:#000;
+                text-shadow:1px 1px #fff;
+                line-height:10px
+                }
+            #butt:not(:first-child){
+                text-indent:-5px;
+                font-weight:700
+            }
+            #butt:nth-child(3) span{
+                display:block;
+                transform:translate(2px,-2px) scale(1.2)
+            }
+            #butt:not(:first-child,:nth-child(2),:nth-child(3)){
+                text-indent:-8px;
+                font-weight:700;
+                letter-spacing:-4px;
+                font-size:10px
+            }
+            #butt:nth-child(8){
+                text-indent:-8px;
+                font-weight:700;
+                letter-spacing:-1.5px;
+                white-space:nowrap;
+                text-shadow:none;
+                transform:translateY(1px)
+            }
+            #butt:nth-child(8) span{
+                display:block;
+                transform:rotate(-90deg) translate(2px,0) scaleY(1.4);color:#000
+                }
+            .title,.artist{
+                height:23px;
+                overflow:hidden;
+                white-space:nowrap;
+                text-overflow:ellipsis;
+                padding-right:20px!important;
+                vertical-align: bottom;
+            }
+            #folder-image {
+                width:80%;
+            }
+            #folder-desktop {
+                position:absolute;
+                top:50%;
+            }
+            #folder-photo {
+                width:40%;
+            }
+            .folder {
+                position:absolute;
+                width:10%;
+                z-index:1;
+            }
+            #big-projects {
+                left:0;
+                top:10%;
+            }
+            #small-projects {
+                left:8%;
+                top:10%;
+            }
+            #neighbour-folder {
+                display:none;
+            }
+            #shadow-blade-folder {
+                display:none;
+            }
+            #world-folder {
+                display:none;
+            }
+            #folderwindow {
+                position:absolute;
+                top:50%;
+                left:60%;
+                width:70%;
+                display:none;
+            }
+            .folder-label {
+                font-family:"Segoe UI";
+                color:#6b6c69;
+                text-shadow: 
+                    0.1px 1px 0 #929592, 
+                    0.1px 0 0 #929592, 
+                    0 0.1px 0 #929592, 
+                    -0.1px -0.1px 0 #929592;
+                position:absolute;
+                font-size:70%;
+                top:33%;
+                
+            }
+            .folder-div {
+                text-align:center;
+            }
+            #big-project-one, #small-project-one {
+                position:absolute;
+                top:15%;
+                left:2%;
+               
+            }
+            #big-project-two, #small-project-two {
+                position:absolute;
+                top:15%;
+                left:12%;
+            }
+            #cosmic-crush-folder {
+                display:none;
+            }
+            
+            #socials {
+                width:69%;
+                position:absolute;
+                left:13%;
+                top:20%;
+               
+            }
+            #paintwindow {
+                position: absolute;
+                top:20%;
+                left:10%;
+                
+            }
+            #instagram {
+                width:15%;
+                position:absolute;
+                top:34%;
+                left:20%;
+                height:20%;
+                color:transparent;
+            }
+            #github {
+                color:transparent;
+                width:15%;
+                position:absolute;
+                left:17%;
+                top:64%;
+                height:20%;
+            }
+            #spacehey {
+                color:transparent;
+                width:12%;
+                position:absolute;
+                left:70%;
+                top:20%;
+                height:20%;
+                
+            }
+            #surprise {
+                color:transparent;
+                width:17%;
+                position:absolute;
+                left:41%;
+                top:62%;
+                height:17%;
+            }
+            #drawing-board {
+                border: 2px solid #000;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                position:absolute;
+                top:16.5%;
+                left:11%;
+                display:none;
+                width:84%;
+                height:65%;
+            }
+            #download-button {
+                position:absolute;
+                top:75%;
+                left:13%;
+                display:none;
+                background: silver;
+                border: 2px inset #dfdfdf;
+                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+                font-family: "Pixelated MS Sans Serif", Arial;
+                font-size: 11px;
+                padding: 3px 6px;
+                cursor: pointer;
+                -webkit-font-smoothing: none;
+                text-shadow: none;
+            }
+            #download-button:active, #clear-button:active, #back-button:active {
+                box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #dfdfdf, inset 2px 2px grey, inset -2px -2px #fff;
+            }
+            #draw {
+                position:absolute;
+                top:55%;
+                left:67%;
+                color:transparent;
+                cursor:pointer;
+                width: 10%;
+                height:15%;
+            }
+            #paintwindowheader {
+                position:absolute;
+                top:0;
+                left:0;
+                cursor:move;
+                padding:0;
+                margin:0;
+                color:transparent;
+                width:97%;
+                height:7%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            #close-paint {
+                position:absolute;
+                top:1%;
+                right:1%;
+                width:4%;
+                z-index:2;
+                height:5%;
+                cursor:pointer;
+                padding:0;
+                margin:0;
+                color:transparent;
+            }
+            #clear-button {
+                position:absolute;
+                top:75%;
+                left:80%;
+                display:none;
+                background: silver;
+                border: 2px inset #dfdfdf;
+                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+                font-family: "Pixelated MS Sans Serif", Arial;
+                font-size: 11px;
+                padding: 3px 6px;
+                cursor: pointer;
+                -webkit-font-smoothing: none;
+                text-shadow: none;
+            }
+            #back-button {
+                position:absolute;
+                top:75%;
+                left:45%;
+                display:none;
+                background: silver;
+                border: 2px inset #dfdfdf;
+                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+                font-family: "Pixelated MS Sans Serif", Arial;
+                font-size: 11px;
+                padding: 3px 6px;
+                cursor: pointer;
+                -webkit-font-smoothing: none;
+                text-shadow: none;
+            }
+            #gayme {
+                color:transparent;
+                width:10%;
+                position:absolute;
+                left:45%;
+                top:45%;
+                height:10%;
+            }
+            
+        </style>
+        <!--------- CD Player Code End --------->
+            
+        </style>
+    </head>
+    <body>
+        <div class="window" id="cd-player-window" style="width:320px">
+            <div class="title-bar">
+                <div class="title-bar-text">
+                    <img src="https://images2.imgbox.com/42/89/JIRoQjUo_o.png"/>CD Player</div>
+                    <div class="title-bar-controls">
+                        <p id="butt" class="minimize"></p>
+                        <p id="butt" class="maximize"></p>
+                        <p id="butt" class="close"></p>
+                        
+                    </div>
+                </div>
+                <div class="window-body">
+                    <p class="toptoptop"><span><u>D</u>isc</span> <span><u>V</u>iew</span> <span><u>O</u>ptions</span> <span><u>H</u>elp</span></p>
+                    <p id="text2">[00] 00:00</p>
+                    <div class="buttontos">
+                        <p id="butt">▶ </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-inline:0px">❚❚ </p>
+                        <p id="butt" style="min-width:20px;max-width:20px"><span>◼</span> </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-top:5px">❚◄◄ </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">◄◄ </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">►► </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">►►❚ </p>
+                        <p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px"><span>❚ ►</span></p>
+                    </div>
+                    <div class="ahhh">
+                        <p id="label">
+                            <u>A</u>rtist:</p>
+                            <p id="text" class="artist"></p>
+                            <p id="label">Title:</p>
+                            <p id="text" class="title"></p>
+                        </div>
+                    </div>
+                    <div class="status-bar">
+                        <p class="status-bar-field">Total Play: 00:00 m:s</p>
+                        <p class="status-bar-field">Track: 00:00 m:s</p>
+                    </div>
+                </div>
+        <iframe id ="cd-player" width="0" height="0" src="https://www.youtube.com/embed/KvknOXGPzCQ//?&;amp;;autoplay=1&;loop=1&" title="music" frameborder="0" allow="autoplay;" loading="lazy"></iframe>
+        <!--<iframe src="https://www.youtube.com/embed/7nQ2oiVqKHw?&amp;;autoplay=1" frameborder="0" class="hideobj"></iframe>-->
+            <div class="desktop-icons"id="notepad-desktop">
+                <img src="https://i.imgur.com/BAjCyga.png" id="notepad-image" class="icon">
+                <p class="text">Notepad</p>
+            </div>
+            <div class="desktop-icons" id="paint-desktop">
+                <img src="https://vignette.wikia.nocookie.net/logopedia/images/4/45/Ms_paint_windows_xp_logo.png/revision/latest?cb=20170825223156" id="paint-icon" class="icon">
+                <p class ="text">Paint</p>
+            </div>
+            <div class="desktop-icons" id="cd-desktop">
+                <img src="https://i.imgur.com/BcgNWdT.png" id="cd-icon" class="icon">
+                <p class="text" style="position:relative; top:-30px;">CD Player</p>
+            </div>
+            <div class="desktop-icons" id="folder-desktop">
+                <img src="https://i.imgur.com/wsa2AC3.png" id="folder-image" class="icon">
+                <p class="text" style="position:relative; top:-30px;">Projects</p>
+            </div>
+        <div id="notepadwindow">
+            <div id="close-notepad">@</div>
+            <!--<div id="notepadwindowheader">Click here to move</div>-->
+            <img id ="notepad-photo" src="https://tse3.mm.bing.net/th/id/OIP.Gx8XC_xn4EOwpaJpVWjymwHaE_?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div id="notepad-text">
+                <p>heyyyy. . .</p>
+                <p>you can call meee spoon 𓊤</p>
+                <p>no you can't actually use that niffty cd player , i got that code from daniel on spacehey and it displays myy current favourite song</p>
+                <p> any ways, i am from hong kong but recently moved to boston , joined hack club (awright) a month ago</p>
+                <p>thingsss are goo d. somee stuff i like:</p>
+                <p>codiing (html is my main , that's what this site is made from ) , oc making , working on worldbuilding with buddies, tshd , omori, bunnies</p>
+                <p> anyyways have fun . . . hope you like windows xp hee hee</p>
+            </div>
+        </div>
+        <!--<div id="paintwindow">
+            <img src="https://i.imgur.com/XAcT5dA.png" id="paint-space">
+        </div>-->
+        <div id="paintwindow">
+            <div id="close-paint">@</div>
+            <div id="paintwindowheader">@</div>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1bafc2fa-cc31-4e36-b718-4246d87d2cf2/debe1rl-e611d5aa-9426-45f0-8d1e-5f3ed2a499f2.png/v1/fill/w_570,h_408,q_80,strp/ms_paint_modified_by_user12720127301998_debe1rl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDA4IiwicGF0aCI6IlwvZlwvMWJhZmMyZmEtY2MzMS00ZTM2LWI3MTgtNDI0NmQ4N2QyY2YyXC9kZWJlMXJsLWU2MTFkNWFhLTk0MjYtNDVmMC04ZDFlLTVmM2VkMmE0OTlmMi5wbmciLCJ3aWR0aCI6Ijw9NTcwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.0FxIZeKPMR7oBu9y7uVd_osYtYMlUm66nmz2juPeD0U" id="paint-image">
+            <img src="https://i.imgur.com/rfSQiMC.jpeg" id="socials">
+            <a id="instagram" href="https://www.instagram.com/youmakemyheartgookiedokie/?next=%2F">@</a>
+            <a id="github" href="https://github.com/lemonseedtree-svg">@</a>
+            <a id="gayme" href="https://docs.google.com/document/d/1jFeYLN6nk_g259_9PRCQz8fA4jSXb4-r6-J027gk0GE/edit?usp=sharing">@</a>
+            <p id="draw">@</p>
+            <a id="surprise" href="https://docs.google.com/document/d/1VHjc-2d1Tb60W6nrczYzaLLYwUdw0xlWrXA8GtPLZVk/edit?usp=sharing">@</a>
+            <a id="spacehey" href ="https://spacehey.com/profile?id=3348050">@</a>
+            <canvas id="drawing-board" ></canvas>
+            <button id="download-button">Download as .webp</button>   
+            <button id="clear-button">Clear</button>  
+            <button id="back-button">Back to socials</button>     
+        </div>
+        <div id="folderwindow">
+            <!--<div id="back-folder">@</div>-->
+            <div id="back-folder">@</div>
+            <div id="close-folder">@</div>
+            <img src="https://i.imgur.com/F6F5CZi.png" id="folder-photo">
+            <div class="folder-div" id="big-projects-folder">
+                <img src="https://i.imgur.com/wsa2AC3.png" class="folder" id="big-projects">
+                <p class="folder-label" style="left:1.5%">big projects</p>
+            </div>
+            <div class="folder-div" id="small-projects-folder">
+                <img src="https://i.imgur.com/wsa2AC3.png" class="folder" id="small-projects">
+                <p class="folder-label" style="left:9%;">small projects</p>
+            </div>
+            <div class="folder-div" id="cosmic-crush-folder">
+                <img src="https://i.imgur.com/BAjCyga.png" class="folder" id="big-project-one" style="width:6%;">
+                <p class="folder-label" style="left:1.5%;">cosmic crush</p>
+            </div>
+            <div class="folder-div" id="neighbour-folder">
+                <img src="https://i.imgur.com/BAjCyga.png" class="folder" id="big-project-two" style="width:6%;">
+                <p class="folder-label" style="left:9%;">neighbour's doorway</p>
+            </div>
+            <div class="folder-div" id="shadow-blade-folder">
+                <img src="https://i.imgur.com/BAjCyga.png" class="folder" id="small-project-one" style="width:6%;">
+                <p class="folder-label" style="left:1.5%;">"shadow blade"</p>
+            </div>
+            <div class="folder-div" id="world-folder">
+                <img src="https://i.imgur.com/BAjCyga.png" class="folder" id="small-project-two" style="width:6%;">
+                <p class="folder-label" style="left:11%;">fun fantasy world</p>
+            </div>
+            
+        </div>
+        </div>
+        <div id="cosmiccrushwindow">
+            <div id="close-cosmic-crush">@</div>
+            <!--<div id="notepadwindowheader">Click here to move</div>-->
+            <img id ="notepad-photo" src="https://tse3.mm.bing.net/th/id/OIP.Gx8XC_xn4EOwpaJpVWjymwHaE_?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div id="cosmic-crush-text">
+                <p>cosmic crush is a gayme im working on with my friend alissa !</p>
+                <p>it is a a dating simulator where players can date our planet ocs</p>
+                <p>im coding it on renpy and the thing is held together by duct tape and prayers while alissa does the art</p>
+                <p>we are the team of all time</p>
+                <p>it will be finished someday but just you wait !</p>
+            </div>
+        </div>
+        <div id="neighbourwindow">
+            <div id="close-neighbour">@</div>
+            <!--<div id="notepadwindowheader">Click here to move</div>-->
+            <img id ="notepad-photo" src="https://tse3.mm.bing.net/th/id/OIP.Gx8XC_xn4EOwpaJpVWjymwHaE_?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div id="neighbour-text">
+                <p>the neighbour's door is a fun project i've been working on in my spare time. . .</p>
+                <p>it is heavily inspired by lomando.com and may or may not be an excuse to try out all the fun gadgets in html</p>
+                <p>lomando is a horror (!!) escape room arg ! mind that before you click that link</p>
+                <p>anyyways. , . it will be done eventually , it is based off liminal spaces (and are mostly real places ! i hope)</p>
+                <p>please. . . send me ideas for mechanics and som eliminal space photos yuo take . . . thankss</p>
+            </div>
+        </div>
+        <div id="shadowbladewindow">
+            <div id="close-shadow-blade">@</div>
+            <!--<div id="notepadwindowheader">Click here to move</div>-->
+            <img id ="notepad-photo" src="https://tse3.mm.bing.net/th/id/OIP.Gx8XC_xn4EOwpaJpVWjymwHaE_?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div id="shadow-blade-text">
+                <p>shadow blade is the (tentative) name of the video game i worked on in my school video game club</p>
+                <p>it features a little teru teru bozu doll character with yellow rain boots that goes around shooting shadow enemies with its umbrella gun</p>
+                <p>(i am aware that it has "blade" in the name. . . it was going to have an umbrella sword but that was too hard to code)</p>
+                <p>it is my first game in godot that i am not if i will finish</p>
+                <p>but it is ok . now yuo know abouut it . . . i am happy</p>
+            </div>
+        </div>
+        <div id="worldwindow">
+            <div id="close-world">@</div>
+            <!--<div id="notepadwindowheader">Click here to move</div>-->
+            <img id ="notepad-photo" src="https://tse3.mm.bing.net/th/id/OIP.Gx8XC_xn4EOwpaJpVWjymwHaE_?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <div id="world-text">
+                <p>me and my buddies aree working on a fun fantasy world inspired by a DND adventure !</p>
+                <p>main cast (i believe) are a retro 80-90s group of 7 in a van named emzie (couldnt rub off a bumper sticker with the letters MZ so they gave up and named it that)</p>
+                <p>it is really fun to make and all species are allowed !</p>
+                <p>(may or may not just be a place for us to dump all our ocs like barbie dolls)</p>
+                <p>gods and magic stuff and robots or anything you can think of are all allowed. . . it even features a dream world called the paracosm for even more otherwordly stuff</p>
+                <p>feel free to join inn ! contact mee. . .</p>
+            </div>
+        </div>
+        
+    </body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+<filter id="pixelate" x="0" y="0" width="100%" height="100%">
+<feFlood x="1" y="1" height="0.001" width="0.001"></feFlood>
+<feComposite in2="SourceGraphic" operator="in" width="10" height="10"></feComposite>
+<feTile result="tiled"></feTile>
+<feComposite in="SourceGraphic" in2="tiled" operator="in"></feComposite>
+<feMorphology operator="dilate" radius="10"></feMorphology>
+</filter>
+</svg>
+<script>
+
+    // Make the DIV element draggable:
+dragElement(document.getElementById("notepadwindow"));
+dragElement(document.getElementById("cd-player-window"));
+dragElement(document.getElementById("notepad-desktop"));
+dragElement(document.getElementById("paint-desktop"));
+dragElement(document.getElementById("cd-desktop"));
+dragElement(document.getElementById("folder-desktop"));
+dragElement(document.getElementById("folderwindow"));
+dragElement(document.getElementById("cosmiccrushwindow"));
+dragElement(document.getElementById("neighbourwindow"));
+dragElement(document.getElementById("shadowbladewindow"));
+dragElement(document.getElementById("worldwindow"));
+dragElement(document.getElementById ("paintwindow"));
+//dragElement(document.getElementById("paintwindow"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.zIndex = 10000;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    elmnt.style.zIndex = 1;
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+document.getElementById('notepad-desktop').onclick = function() {
+            const notepadWindow = document.getElementById('notepadwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'none' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'block';
+            } else {
+                notepadWindow.style.display = 'none';
+            }
+        };
+document.getElementById('paint-desktop').onclick = function() {
+            const paintWindow = document.getElementById('paintwindow');
+            // Toggle visibility
+            if (paintWindow.style.display === 'none' || paintWindow.style.display === '') {
+                paintWindow.style.display = 'block';
+            } else {
+                paintWindow.style.display = 'none';
+            }
+        };
+document.getElementById('close-notepad').onclick = function() {
+            const notepadWindow = document.getElementById('notepadwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-cosmic-crush').onclick = function() {
+            const notepadWindow = document.getElementById('cosmiccrushwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-neighbour').onclick = function() {
+            const notepadWindow = document.getElementById('neighbourwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-shadow-blade').onclick = function() {
+            const notepadWindow = document.getElementById('shadowbladewindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-world').onclick = function() {
+            const notepadWindow = document.getElementById('worldwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-folder').onclick = function() {
+            const notepadWindow = document.getElementById('folderwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('back-folder').onclick = function() {
+            const bigprojects = document.getElementById('big-projects-folder');
+            const smallprojects = document.getElementById('small-projects-folder');
+            const cosmiccrush = document.getElementById('cosmic-crush-folder');
+            const neighbour = document.getElementById('neighbour-folder')
+            const world = document.getElementById('world-folder')
+            const shadowblade = document.getElementById('shadow-blade-folder')
+            // Toggle visibility
+            if (cosmiccrush.style.display === 'block' || cosmiccrush.style.display === '') {
+                cosmiccrush.style.display = 'none';
+                neighbour.style.display = 'none';
+                bigprojects.style.display = 'block';
+                smallprojects.style.display = 'block';
+            }
+            else if (world.style.display === 'block' || world.style.display === '') {
+                world.style.display = 'none';
+                shadowblade.style.display = 'none';
+                bigprojects.style.display = 'block';
+                smallprojects.style.display = 'block';
+            } 
+            else {
+                bigprojects.style.display = 'block';
+                smallprojects.style.display = 'block';
+            }
+        };
+document.getElementById('cd-desktop').onclick = function() {
+            const notepadWindow = document.getElementById('cd-player-window');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('folder-desktop').onclick = function() {
+            const notepadWindow = document.getElementById('folderwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('cosmic-crush-folder').onclick = function() {
+            const notepadWindow = document.getElementById('cosmiccrushwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('neighbour-folder').onclick = function() {
+            const notepadWindow = document.getElementById('neighbourwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('shadow-blade-folder').onclick = function() {
+            const notepadWindow = document.getElementById('shadowbladewindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('world-folder').onclick = function() {
+            const notepadWindow = document.getElementById('worldwindow');
+            // Toggle visibility
+            if (notepadWindow.style.display === 'block' || notepadWindow.style.display === '') {
+                notepadWindow.style.display = 'none';
+            } else {
+                notepadWindow.style.display = 'block';
+            }
+        };
+document.getElementById('close-paint').onclick = function() {
+            const paintWindow = document.getElementById('paintwindow');
+            // Hide the window
+            paintWindow.style.display = 'none';
+        };
+document.getElementById('draw').onclick = function() {
+            const socials = document.getElementById('socials');
+            const drawingboard = document.getElementById('drawing-board');
+            const downloadbutton = document.getElementById('download-button');
+            const clearbutton = document.getElementById('clear-button');
+            const backbutton = document.getElementById('back-button');
+            const header = document.getElementById('paintwindowheader');
+            // Toggle visibility
+            if (socials.style.display === 'block' || socials.style.display === '') {
+                socials.style.display = 'none';
+                drawingboard.style.display = 'block';
+                downloadbutton.style.display = 'block';
+                clearbutton.style.display = 'block';
+                backbutton.style.display = 'block';
+                header.style.display = 'block';
+                // Set canvas size when shown
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            } else {
+                socials.style.display = 'block';
+                drawingboard.style.display = 'none';
+                downloadbutton.style.display = 'none';
+                clearbutton.style.display = 'none';
+                backbutton.style.display = 'none';
+                header.style.display = 'none';
+            }
+        };
+document.getElementById('back-button').onclick = function() {
+            const socials = document.getElementById('socials');
+            const drawingboard = document.getElementById('drawing-board');
+            const downloadbutton = document.getElementById('download-button');
+            const clearbutton = document.getElementById('clear-button');
+            const backbutton = document.getElementById('back-button');
+            // Toggle visibility
+            if (socials.style.display === 'none' || socials.style.display === '') {
+                socials.style.display = 'block';
+                drawingboard.style.display = 'none';
+                downloadbutton.style.display = 'none';
+                clearbutton.style.display = 'none';
+                backbutton.style.display = 'none';
+            } else {
+                socials.style.display = 'none';
+                drawingboard.style.display = 'block';
+                downloadbutton.style.display = 'block';
+                clearbutton.style.display = 'block';
+                backbutton.style.display = 'block';
+            }
+        };
+document.querySelector('.close').onclick = function() {
+    const cdPlayerWindow = document.getElementById('cd-player-window');
+    // Hide the CD player window
+    cdPlayerWindow.style.display = 'none';
+};
+document.querySelector('#big-projects-folder').onclick = function() {
+    const newfolder2 = document.getElementById('neighbour-folder');
+    const newfolder = document.getElementById('cosmic-crush-folder');
+    const originalfolder = document.getElementById('big-projects-folder');
+    const originalfolder2 = document.getElementById('small-projects-folder');
+    // Hide the CD player window
+    newfolder.style.display = 'block'
+    newfolder2.style.display = 'block';
+    originalfolder.style.display = 'none';
+    originalfolder2.style.display = 'none';
+
+};
+document.querySelector('#small-projects-folder').onclick = function() {
+    const newfolder2 = document.getElementById('world-folder');
+    const newfolder = document.getElementById('shadow-blade-folder');
+    const originalfolder = document.getElementById('big-projects-folder');
+    const originalfolder2 = document.getElementById('small-projects-folder');
+    // Hide the CD player window
+    newfolder.style.display = 'block'
+    newfolder2.style.display = 'block';
+    originalfolder.style.display = 'none';
+    originalfolder2.style.display = 'none';
+
+};
+
+const canvas = document.getElementById('drawing-board');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+
+ctx.strokeStyle = 'black';
+ctx.lineWidth = 2;
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+
+function startDrawing(e) {
+    isDrawing = true;
+    ctx.beginPath();
+    ctx.moveTo(e.offsetX, e.offsetY);
+}
+
+function draw(e) {
+    if (!isDrawing) return;
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+}
+
+function stopDrawing() {
+    isDrawing = false;
+}
+
+document.getElementById('download-button').onclick = function() {
+    const link = document.createElement('a');
+    link.download = 'drawing.webp';
+    link.href = canvas.toDataURL('image/webp');
+    link.click();
+};
+
+document.getElementById('clear-button').onclick = function() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let alpha = 1;
+    const fadeOut = () => {
+        alpha -= 0.05;
+        ctx.putImageData(imageData, 0, 0);
+        ctx.globalAlpha = 1 - alpha;
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.globalAlpha = 1;
+        if (alpha > 0) {
+            requestAnimationFrame(fadeOut);
+        } else {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+    };
+    fadeOut();
+};
+
+</script>
+</html>
